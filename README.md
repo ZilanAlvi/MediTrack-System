@@ -190,11 +190,6 @@ DELETE /api/v1/prescription/by-date?start={date}&end={date}
 - Maven 3+  
 - Optional: MySQL/PostgreSQL for production  
 
-### Steps
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/meditrack-backend.git
-cd meditrack-backend
 
 
 -------------------------------------------------------------------------------------
@@ -268,6 +263,7 @@ npm install react-to-print
 npm install dayjs
 npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm install react-icons
+```
 
 Project Structure
 
