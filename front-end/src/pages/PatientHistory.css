@@ -1,0 +1,62 @@
+/* Prescription cards */
+.prescription-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 20px;
+    background-color: rgba(10, 26, 68, 0.9);
+    color: #e0e7ff; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.prescription-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Text inside cards */
+.prescription-card h4,
+.prescription-card h6,
+.prescription-card p,
+.prescription-card li {
+    color: #000000; 
+}
+
+.prescription-card .text-muted {
+    color: rgba(224, 231, 255, 0.7); 
+}
+
+/* Body background */
+body {
+    background: linear-gradient(135deg, #0a1f44, #0d3a7a, #0d4a8f);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    color: #e0e7ff; 
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Forms and buttons */
+.form-control {
+    background-color: rgba(10, 26, 68, 0.8);
+    color: #e0e7ff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-control::placeholder {
+    color: rgba(224, 231, 255, 0.6);
+}
+
+.btn-outline-primary {
+    color: #e0e7ff;
+    border-color: #e0e7ff;
+}
+
+.btn-outline-primary:hover {
+    background-color: rgba(224, 231, 255, 0.1);
+}

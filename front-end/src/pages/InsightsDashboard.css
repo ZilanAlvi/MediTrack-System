@@ -1,0 +1,98 @@
+/* Card shadows and hover */
+.card {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Card titles */
+.card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #135bec; /* Primary color */
+  border-bottom: 2px solid rgba(19, 91, 236, 0.2);
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+/* Lists in cards */
+.card ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f3f5;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.card ul li:last-child {
+  border-bottom: none;
+}
+
+.card ul li:hover {
+  background-color: rgba(19, 91, 236, 0.05);
+  border-radius: 6px;
+}
+
+/* Gender distribution circles */
+.bg-primary {
+  background: linear-gradient(135deg, #135bec 0%, #0d6efd 100%);
+}
+
+.bg-pink {
+  background: linear-gradient(135deg, #ff6fcf 0%, #ff4dab 100%);
+}
+
+.bg-secondary {
+  background: linear-gradient(135deg, #adb5bd 0%, #868e96 100%);
+}
+
+/* Chart placeholder */
+.h-64 {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e9f2ff 0%, #d0e4ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Dashboard header buttons */
+button.btn-primary,
+button.btn-outline-secondary {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+button.btn-primary:hover {
+  background: linear-gradient(135deg, #135bec 0%, #0d6efd 100%);
+  box-shadow: 0 6px 12px rgba(19, 91, 236, 0.3);
+}
+
+button.btn-outline-secondary:hover {
+  background-color: rgba(19, 91, 236, 0.05);
+  color: #135bec;
+  box-shadow: 0 6px 12px rgba(19, 91, 236, 0.1);
+}
+
+/* Cards responsive padding */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 16px !important;
+  }
+}
+
+/* Dashboard main title */
+h1.fw-bold {
+  font-size: 2rem;
+  color: #135bec;
+}
+
+/* Subtext */
+.text-muted {
+  font-size: 0.95rem;
+}

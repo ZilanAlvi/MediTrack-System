@@ -1,0 +1,165 @@
+
+/* Main container */
+.container-custom {
+  margin-top: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form controls inside container */
+.container-custom .form-control {
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #000000; 
+    border: 1px solid rgba(5, 0, 0, 0.2);
+}
+
+.container-custom .form-control::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+
+/* Filters row */
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Inputs and buttons uniform height */
+.filters-row .form-control,
+.filters-row .btn {
+  height: 45px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Transparent input background */
+.filters-row .form-control {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(108, 99, 255, 0.5);
+}
+
+.filters-row .form-control:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* Button hover animations */
+.btn-primary,
+.btn-secondary,
+.btn-outline-secondary,
+.btn-outline-danger,
+.btn-outline-primary {
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.btn-primary:hover {
+  background-color: rgba(87, 75, 252, 0.8);
+  border-color: rgba(87, 75, 252, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(108, 99, 255, 0.8);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-danger:hover {
+  background-color: rgba(108, 99, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Table container with shadow & transparency */
+.table-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  transition: all 0.3s ease;
+}
+
+/* Table hover effect */
+.table tbody tr:hover {
+  background-color: rgba(108, 99, 255, 0.05);
+  cursor: pointer;
+  transform: translateX(3px);
+  transition: all 0.3s ease;
+}
+
+/* Table header */
+.table thead th {
+  background: linear-gradient(135deg, #02027c, #574bfc);
+  color: rgb(209, 197, 197);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Table cells */
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Pagination */
+.pagination .page-item.active .page-link {
+  background-color: #6c63ff;
+  border-color: #6c63ff;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-link {
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+  background-color: rgba(108, 99, 255, 0.1);
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+/* Hover highlight on buttons inside table */
+.table td button {
+  transition: all 0.3s ease;
+}
+
+.table td button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 10px rgba(108, 99, 255, 0.3);
+}
+
+/* Make all filter buttons aligned in one row on desktop */
+@media (min-width: 768px) {
+  .filters-row {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Input focus highlight */
+.form-control:focus {
+  outline: none;
+  border: 2px solid #6c63ff;
+}
+
+/* Smooth transition for table appearance */
+.table-container,
+.filters-row,
+.btn,
+.form-control {
+  transition: all 0.3s ease-in-out;
+}

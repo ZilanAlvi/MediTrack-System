@@ -1,0 +1,87 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff; /* Default text color white for contrast */
+  background: linear-gradient(135deg, #0a1f44, #0d3a7a, #0d4a8f); /* Dark blue gradient */
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Links and navigation */
+a, .nav-link {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+a:hover, .nav-link:hover {
+  color: #00c6ff; /* Highlight hover */
+  text-decoration: none;
+}
+
+/* Cards */
+.card, .modal-content, .table-container {
+  background-color: rgba(0, 0, 0, 0.25); 
+  backdrop-filter: blur(6px); 
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover, .modal-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings and text */
+h1, h2, h3, h4, h5, h6, p, li, span {
+  color: #fff; 
+}
+
+/* Form controls */
+input, textarea, select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Buttons */
+.btn, .btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn:hover, .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+
+/* Footer */
+.custom-footer {
+  background: linear-gradient(135deg, #0a1f44, #0d3a7a, #0d4a8f); /* Same as navbar */
+  color: #fff;
+  padding: 20px 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 576px) {
+  .footer-bar {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

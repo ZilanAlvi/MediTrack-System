@@ -1,0 +1,9 @@
+const fetchPrescriptions = async () => {
+  try {
+    const res = await axios.get(API_URL);
+    console.log("Fetched prescriptions:", res.data); // <-- debug
+    setPrescriptions(res.data);
+  } catch (err) {
+    console.error("Error fetching prescriptions:", err.response || err.message);
+  }
+};
