@@ -266,6 +266,7 @@ npm install react-icons
 ```
 
 Project Structure
+```bash
 
 src/
 ├── api/
@@ -286,6 +287,7 @@ src/
 ├── styles/
 ├── App.jsx
 └── main.jsx
+```
 
 | Route                     | Page                                     |
 | ------------------------- | ---------------------------------------- |
@@ -300,6 +302,7 @@ src/
 
 
 6. API Endpoints Consumed
+```bash
 
 POST   /api/v1/auth/login
 GET    /api/v1/prescription
@@ -312,7 +315,7 @@ GET    /api/v1/prescription/by-date?start&end
 GET    /api/v1/prescription/daywise-report?start&end
 GET    /api/v1/history
 POST   /api/v1/history
-
+```
 
 functional_features:
   authentication_session:
@@ -393,7 +396,3 @@ edge_cases_improvements:
   axios_vs_fetch: "Mixed usage, should unify"
   auth_storage: "localStorage used instead of JWT"
   bulk_delete: "Endpoint available but no UI button yet"
-
-
-
-
