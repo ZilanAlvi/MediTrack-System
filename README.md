@@ -90,6 +90,7 @@ Layered Architecture:
 ---
 
 ## 5. Project Structure
+```bash
 
 src/main/java/com/prescription/prescription_backend/
 │
@@ -127,6 +128,7 @@ src/main/java/com/prescription/prescription_backend/
 ├── PrescriptionService.java
 └── HistoryService.java
 
+```
 
 ---
 
@@ -195,7 +197,7 @@ DELETE /api/v1/prescription/by-date?start={date}&end={date}
 -------------------------------------------------------------------------------------
 
 
-# MediTrack System – Frontend
+### MediTrack System – Frontend
 
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)  
 [![Vite](https://img.shields.io/badge/Vite-5-brightgreen)](https://vitejs.dev/)  
@@ -265,7 +267,7 @@ npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm install react-icons
 ```
 
-Project Structure
+## 4. Project Structure
 ```bash
 
 src/
@@ -288,7 +290,7 @@ src/
 ├── App.jsx
 └── main.jsx
 ```
-
+## 5. Routing Map
 | Route                     | Page                                     |
 | ------------------------- | ---------------------------------------- |
 | `/login`                  | Login page                               |
@@ -301,7 +303,7 @@ src/
 | `/pdf`                    | PDF export page                          |
 
 
-6. API Endpoints Consumed
+## 6. API Endpoints Consumed
 ```bash
 
 POST   /api/v1/auth/login
@@ -317,82 +319,114 @@ GET    /api/v1/history
 POST   /api/v1/history
 ```
 
-functional_features:
-  authentication_session:
-    login:
-      description: "Validates username/password, calls backend, stores user in localStorage, redirects to /prescriptions."
-    logout:
-      description: "Clears session and navigates to /login."
-    protected_routes:
-      description: "Only accessible when logged in."
 
-  prescription_list_dashboard:
-    description: "Fetches all prescriptions or filtered by date range."
-    search: "By patient or diagnosis"
-    date_range_filter: "Auto-applied"
-    pagination: "Client-side, 10 rows per page"
-    sort: "By date, newest first"
-    actions_per_row:
-      edit: "Navigates to form"
-      delete: "Confirmation modal"
-      archive: "Moves entry to History via POST /history"
-    ux_enhancements: "Loading spinners, hover effects, confirmation dialogs, alerts"
+---
 
-  create_prescription:
-    validation:
-      mandatory: [date, name, age, gender]
-      optional: [diagnosis, medicines, next visit date]
-    client_feedback: "Using isInvalid"
-    submit: "POST /prescription"
-    success: "Shows alert, redirects to dashboard"
+## 7. Functional Features
 
-  edit_prescription:
-    fetch: "By ID, pre-fills form"
-    validation: "Validates inputs"
-    submit: "PUT /prescription/:id"
-    ux: "Spinner during load, alert on save"
+### Authentication & Session
 
-  daily_prescription_report:
-    inputs: [start_date, end_date]
-    fetch: "Day-wise counts"
-    display: "Table and Recharts line chart"
-    export: "PDF via jsPDF + autoTable"
-    empty_state: "Handled gracefully"
+* **Login**
 
-  insights_dashboard:
-    load: "All prescriptions + last 30 days’ counts"
-    analytics:
-      - "Top diagnoses"
-      - "Most prescribed medicines"
-      - "Age group distribution"
-      - "Gender breakdown"
-      - "Monthly trends (line chart)"
-      - "Top patients by visit count"
-    charts: "Chart.js (bar, doughnut, line)"
+  * Validates username/password via backend
+  * Stores user in `localStorage`
+  * Redirects to `/prescriptions`
+* **Logout**
 
-  patient_history:
-    fetch: "/history"
-    features:
-      - "Search"
-      - "Sort (New→Old / Old→New)"
-      - "Pagination (Load more)"
-      - "Styled cards with medicines listed bullet-style"
+  * Clears session
+  * Navigates to `/login`
+* **Protected Routes**
 
-  pdf_export:
-    filter: "By date"
-    export: "Full list via jsPDF + autoTable"
-    print_ready: "react-to-print"
+  * Only accessible when logged in
 
-styling_ux_enhancements:
-  theme: "Dark, animated gradient background with light text"
-  cards: "Rounded corners, gradient borders, hover lift"
-  tables: "Responsive, shadows, hover highlights"
-  forms: "Dark inputs, clear validation messages, styled selects"
-  buttons: "Gradient buttons with hover animations"
-  alerts_modals: "Bootstrap-styled for consistency"
-  patient_history_cards: "Gradient overlays, medicines rendered cleanly"
+### Prescription List (Dashboard)
 
-edge_cases_improvements:
-  axios_vs_fetch: "Mixed usage, should unify"
-  auth_storage: "localStorage used instead of JWT"
-  bulk_delete: "Endpoint available but no UI button yet"
+* Fetches all prescriptions or filtered by date range
+* **Search:** By patient name or diagnosis
+* **Date Range Filter:** Auto-applied
+* **Pagination:** Client-side, 10 rows per page
+* **Sort:** By date (newest first)
+* **Row Actions:**
+
+  * **Edit:** Opens form to update prescription
+  * **Delete:** Confirmation modal
+  * **Archive:** Moves entry to History via `POST /history`
+* **UX Enhancements:** Loading spinners, hover effects, confirmation dialogs, alerts
+
+### Create Prescription
+
+* **Form Validation:**
+
+  * Mandatory: `date`, `name`, `age`, `gender`
+  * Optional: `diagnosis`, `medicines`, `next visit date`
+* **Client Feedback:** Inline errors using `isInvalid`
+* **Submit:** `POST /prescription`
+* **Success:** Shows alert and redirects to dashboard
+
+### Edit Prescription
+
+* Fetches prescription by ID and pre-fills form
+* Validates inputs
+* **Submit:** `PUT /prescription/:id`
+* Spinner during load; shows alert on save
+
+### Daily Prescription Report
+
+* **Inputs:** Start & end date
+* Fetches day-wise prescription counts
+* Displays table + Recharts line chart
+* Export to PDF via `jsPDF + autoTable`
+* Handles empty states gracefully
+
+### Insights Dashboard
+
+* Loads all prescriptions + last 30 days’ day-wise counts
+* **Analytics Computed:**
+
+  * Top diagnoses
+  * Most prescribed medicines
+  * Age group distribution
+  * Gender breakdown
+  * Monthly trends (line chart)
+  * Top patients by visit count
+* Charts rendered via Chart.js (bar, doughnut, line)
+
+### Patient History
+
+* Fetches `/history`
+* **Features:**
+
+  * Search by patient name
+  * Sort (New → Old / Old → New)
+  * Pagination with “Load more” button
+* Styled cards showing full details; medicines listed in bullets
+
+### PDF Export
+
+* Filters by date
+* Exports full list to PDF via `jsPDF + autoTable`
+* Print-ready using `react-to-print`
+
+---
+
+## 8. Styling & UX Enhancements
+
+* Dark, animated gradient background with light text
+* Cards: Rounded corners, gradient borders, hover lift
+* Tables: Responsive, shadows, hover highlights
+* Forms: Dark inputs, clear validation messages, styled selects
+* Buttons: Gradient buttons with hover animations
+* Alerts & Modals: Bootstrap-styled for consistency
+* Patient History Cards: Gradient overlays, medicines rendered cleanly
+
+---
+
+## 9. Edge Cases & Improvements
+
+* Axios vs Fetch mixed usage (should unify)
+* `localStorage` used for authentication instead of JWT
+* Bulk delete endpoint available but no UI button yet
+
+---
+
+
